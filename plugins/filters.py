@@ -41,10 +41,10 @@ async def addfilter(client, message):
                 chat = await client.get_chat(grpid)
                 title = chat.title
             except:
-                await message.reply_text("Make sure I'm present in your group!!", quote=True)
+                await message.reply_text("Qrupunuzda olduğuma əmin olun!!", quote=True)
                 return
         else:
-            await message.reply_text("I'm not connected to any groups!", quote=True)
+            await message.reply_text("Mən heç bir Qrupua qoşulmuram!", quote=True)
             return
 
     elif (chat_type == "group") or (chat_type == "supergroup"):
@@ -67,7 +67,7 @@ async def addfilter(client, message):
     text = extracted[0].lower()
    
     if not message.reply_to_message and len(extracted) < 2:
-        await message.reply_text("Add some content to save your filter!", quote=True)
+        await message.reply_text("filterinizi saxlamaq üçün məzmun lazımdır!", quote=True)
         return
 
     if (len(extracted) >= 2) and not message.reply_to_message:
