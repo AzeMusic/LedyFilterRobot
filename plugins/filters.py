@@ -74,7 +74,7 @@ async def addfilter(client, message):
         reply_text, btn, alert = parser(extracted[1], text)
         fileid = None
         if not reply_text:
-            await message.reply_text("You cannot have buttons alone, give some text to go with it!", quote=True)
+            await message.reply_text("Sizdə tək düymələr ola bilməz, onunla getmək üçün bir az mətn verin!", quote=True)
             return
 
     elif message.reply_to_message and message.reply_to_message.reply_markup:
@@ -189,10 +189,10 @@ async def get_all(client, message):
                 chat = await client.get_chat(grpid)
                 title = chat.title
             except:
-                await message.reply_text("Make sure I'm present in your group!!", quote=True)
+                await message.reply_text("Qrupunuzda olduğuma əmin olun!!", quote=True)
                 return
         else:
-            await message.reply_text("I'm not connected to any groups!", quote=True)
+            await message.reply_text("Mən heç bir qrupa qoşulmuram!", quote=True)
             return
 
     elif (chat_type == "group") or (chat_type == "supergroup"):
@@ -246,10 +246,10 @@ async def deletefilter(client, message):
                 chat = await client.get_chat(grpid)
                 title = chat.title
             except:
-                await message.reply_text("Make sure I'm present in your group!!", quote=True)
+                await message.reply_text("Qrupunuzda olduğuma əmin olun!!", quote=True)
                 return
         else:
-            await message.reply_text("I'm not connected to any groups!", quote=True)
+            await message.reply_text("Mən heç bir Qrupa qoşupmuram!", quote=True)
 
     elif (chat_type == "group") or (chat_type == "supergroup"):
         grp_id = message.chat.id
@@ -266,9 +266,9 @@ async def deletefilter(client, message):
         cmd, text = message.text.split(" ", 1)
     except:
         await message.reply_text(
-            "<i>Mention the filtername which you wanna delete!</i>\n\n"
-            "<code>/del filtername</code>\n\n"
-            "Use /viewfilters to view all available filters",
+            "<i>Silmək isdədiyiniz filter adıni qeyd edin!</i>\n\n"
+            "<code>/del filter adı</code>\n\n"
+            "mövcud filtərləri görmək üçün /viewfilters basın",
             quote=True
         )
         return
@@ -291,10 +291,10 @@ async def delallconfirm(client, message):
                 chat = await client.get_chat(grpid)
                 title = chat.title
             except:
-                await message.reply_text("Make sure I'm present in your group!!", quote=True)
+                await message.reply_text("Qrupunuzda olduğuma əmin olun!!", quote=True)
                 return
         else:
-            await message.reply_text("I'm not connected to any groups!", quote=True)
+            await message.reply_text("mən heç bir qrupa qoşulmuram!", quote=True)
             return
 
     elif (chat_type == "group") or (chat_type == "supergroup"):
